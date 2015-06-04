@@ -159,9 +159,9 @@ class FOSUBRegistrationFormHandler implements RegistrationFormHandlerInterface
         $accessor = PropertyAccess::createPropertyAccessor();
         $accessor->setValue($user, 'username', $this->getUniqueUserName($userInformation->getNickname()));
 
-        if ($accessor->isWritable($user, 'email')) {
+        //if ($accessor->isWritable($user, 'email')) {
             $accessor->setValue($user, 'email', $userInformation->getEmail());
-        }
+        //}
 
         return $user;
     }

@@ -33,7 +33,7 @@ class EntityUserProvider implements UserProviderInterface, OAuthAwareUserProvide
      * @var ObjectManager
      */
     protected $em;
-    
+
     /**
      * @var string
      */

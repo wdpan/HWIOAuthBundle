@@ -127,7 +127,7 @@ class PathUserResponse extends AbstractUserResponse
 
             $value = array();
             foreach ($steps as $step) {
-                $value[] = $this->getValue($step, $response);
+                $value[] = implode(' ', $this->getValue($step, $response));
             }
 
             $value = trim(implode(' ', $value));

@@ -81,12 +81,13 @@ class FOSUBUserProvider implements UserProviderInterface, AccountConnectorInterf
      */
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
+        //Change by eric
         $email = $response->getEmail()[0];
         $username = $email;
         $user = $this->userManager->findUserBy(array($this->getProperty($response) => $username));
         if (null === $user || null === $username) {
             throw new AccountNotLinkedException(sprintf("User '%s' not found.", $username));
-        }
+        } 
 
         return $user;
     }
